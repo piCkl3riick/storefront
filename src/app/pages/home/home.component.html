@@ -1,0 +1,27 @@
+<div class="categories-container">
+  <div class="categories-list">
+
+    <span mat-button class="pointer-text" (click)="selectAll()">
+      All
+    </span>
+    <div *ngFor="let category of categories" class="">
+      <span mat-button class="pointer-text" (click)="selectCategory(category)">
+        {{ category.name }}
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="product-list">
+  <mat-card *ngFor="let product of products" class="product-card">
+    <mat-card-title>{{ product.title }}</mat-card-title>
+    <img mat-card-image [src]="product.image" alt="{{ product.title }}" [routerLink]="['/product', product.id]">
+    <span style="color: black; text-align: center;">Price: {{ product.price | currency }}</span>
+    <span style="color: black; text-align: center;">Rating: {{ product.rating.rate | currency }}</span>
+    <mat-card-actions>
+      <button mat-button (click)="addToCart(product)">Add to Cart</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+  

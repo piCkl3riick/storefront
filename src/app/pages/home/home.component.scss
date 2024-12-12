@@ -1,0 +1,178 @@
+.product-list {
+  display: flex;
+  padding: 25px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.product-card {
+  width: 200px;
+  height: 350px;
+  margin: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.product-card img {
+  width: 80%;
+  height: 100%;
+  align-self: center;
+}
+
+.product-card .product-description {
+  position: absolute;
+  bottom: -50px;
+  /* Initially hide description */
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  transition: bottom 0.3s ease, height 0.3s ease;
+  /* Transition for both bottom and height */
+  font-size: 0.9em;
+  min-height: 20px;
+  /* Set the minimum height for description */
+  height: 20px;
+}
+
+.product-card:hover .product-description {
+  bottom: 0;
+  /* Slide description up on hover */
+  height: 75%;
+  /* Expand the description to full height when hovering */
+}
+
+.product-card mat-card-title {
+  font-size: 1.2em;
+  margin: 10px 0;
+  text-align: center;
+  color: black
+}
+
+.product-card mat-card-subtitle {
+  font-size: 1em;
+  text-align: center;
+}
+
+.product-card mat-card-actions {
+  margin-top: auto;
+  /* Push the button to the bottom of the card */
+  display: flex;
+  justify-content: center;
+  /* Center the button horizontally */
+  padding: 10px;
+  color: black;
+}
+
+.mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  /* Space between the title and buttons */
+  align-items: center;
+}
+
+.spacer {
+  flex-grow: 1;
+  /* Push the cart icon to the far right */
+}
+
+.cart-button {
+  color: white;
+  /* Match the toolbar's theme */
+  margin-left: 100%;
+  /* Align the cart button at the far right */
+  display: none;
+}
+
+::ng-deep {
+
+  .mat-button,
+  .mat-icon-button,
+  .mat-stroked-button {
+    color: inherit;
+    background: #ffffff;
+  }
+}
+
+.categories-container {
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;  /* Centers the content horizontally */
+  // justify-content: center;
+  // padding: 20px;
+  // // width: 100%;  /* Ensure it takes full available width */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 20px;
+  background-color: black;
+  color: white;
+}
+
+
+.pointer-text {
+  cursor: pointer;
+}
+
+
+.categories-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  /* Ensure title is centered */
+}
+
+.categories-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* Adjust for responsiveness */
+  grid-gap: 20px;
+  justify-items: center;
+  /* Center the grid items */
+  align-items: center;
+  /* Vertically align items inside grid cells */
+  width: 100%;
+  /* Ensure the grid takes full available width */
+  padding: 10px;
+}
+
+.category-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  /* Ensure text inside card is centered */
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.category-button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: white;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.category-button:hover {
+  background-color: #004d40;
+}

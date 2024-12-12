@@ -1,0 +1,123 @@
+* {
+  color: black !important;
+}
+
+.cart-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 80vh; /* Ensure container takes up full height */
+  overflow: hidden; /* Prevent overflow of the entire container */
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.cart-content {
+  display: flex;
+  gap: 40px;
+  height: 100%;
+}
+
+.cart-items {
+  flex: 1; /* Take up remaining space */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: calc(90vh - 200px); /* Limit the height of the items list */
+  overflow-y: auto; /* Enable vertical scrolling if items exceed height */
+}
+
+.cart-item {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.cart-item-img {
+  width: 100px;
+  height: 100px;
+  object-fit: scale-down;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cart-item-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.cart-summary {
+  flex: 0 0 250px; /* Set a fixed width for the summary column */
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+/* Custom styles to override the default styles of mat-list-item */
+::ng-deep {
+  .mat-list-item, .mat-list-option {
+    display: flex !important; /* Remove block display and set it to flex */
+    height: auto !important; /* Remove fixed height */
+    padding: 0 !important; /* Remove default padding */
+  }
+
+  .mat-list-item .mat-list-item-content, .mat-list-option .mat-list-item-content {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    box-sizing: border-box;
+    padding: 0 16px !important; /* Ensure padding is maintained but no height set */
+    position: relative !important;
+    height: auto !important; /* Remove inherited height */
+  }
+}
+
+/* Media query for small screens (mobile and tablets) */
+@media (max-width: 768px) {
+  .cart-content {
+    flex-direction: column; /* Stack columns vertically on small screens */
+    gap: 20px;
+  }
+
+  .cart-items {
+    width: 100%;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+
+  .cart-summary {
+    width: 100%;
+    flex: none;
+  }
+}

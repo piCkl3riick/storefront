@@ -1,0 +1,42 @@
+  .cart-button {
+    color: black;
+    margin-left: auto;
+  }
+
+  .pointer-text {
+    cursor: pointer;
+  }
+  
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .router-outlet {
+    padding-bottom: 50px;
+  }
+
+  /* Spacer for the main navigation */
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  /* Footer styles */
+  .footer[_ngcontent-qod-c114] {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2);
+    background-color: #333; /* Adjust to your footer background color */
+}
+
+  /* Adjust toolbar styles */
+  mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
